@@ -14,6 +14,15 @@
             <!-- Header -->
             {% include "includes/header.twig" %}
 
+                        <!-- Feature Widget -->
+            {{widget('feature', 'header-feature', {
+                "header": "profile",
+                'positionTopPercentage': '0',
+                "defaultBgImg": asset('images/feature.jpg'),
+                'showBtn': true,
+                buttonText: "Lorem Ipsum"
+            })|raw}}
+
 
             <div role="main">
 
