@@ -1,0 +1,19 @@
+
+//  Company name
+// ----------------
+
+.companyname {
+    line-height: @font__companyname--line-height;
+
+    @media @mobile-650px {
+        line-height: bkscale(@font__companyname--line-height, 0.88);
+    }
+
+
+    .company-link {
+        @media @mobile-650px {
+            font-size: bkscale(@font__companyname--font-size, 0.88);
+            line-height: bkscale(@font__companyname--line-height, 0.88);
+        }
+    }
+}

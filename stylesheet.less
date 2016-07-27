@@ -1,0 +1,438 @@
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  LESS Includes
+//    - BK LESS Framework
+//    - Base Styles
+//    - Widgets
+//    - Plugins
+//    - Pages
+
+
+//  Theme Styles
+//    - Header
+//    - Main
+
+
+
+
+// -----------------------------
+//  LESS Includes
+// -----------------------------
+
+
+
+// BK LESS Framework
+// ------------------
+
+@import "@{templateCommon}/bk-less-framework-v8.less";                      // V8 Framework
+
+
+
+// Base Styles
+// --------------
+
+@import "@{templateLocal}/stylesheets/base/mixins.less";                    // Mixins
+@import "@{templateLocal}/stylesheets/base/typography.less";                // Typography
+
+
+
+// Widgets Styles
+// --------------
+
+@import "@{templateLocal}/stylesheets/widgets/brand.less";                  // Logo & Companyname
+@import "@{templateLocal}/stylesheets/widgets/navigation.less";             // Navigation
+@import "@{templateLocal}/stylesheets/widgets/gallery.less";                // Gallery
+@import "@{templateLocal}/stylesheets/widgets/forms.less";                  // Forms
+@import "@{templateLocal}/stylesheets/widgets/social.less";                 // Social
+@import "@{templateLocal}/stylesheets/widgets/twitter.less";                // Twitter
+@import "@{templateLocal}/stylesheets/widgets/yelp.less";                   // Yelp
+@import "@{templateLocal}/stylesheets/widgets/divider.less";                // Divider
+@import "@{templateLocal}/stylesheets/widgets/contact-form.less";           // Contact Form
+@import "@{templateLocal}/stylesheets/widgets/image.less";                  // Image
+@import "@{templateLocal}/stylesheets/widgets/slideshow.less";              // Slideshow
+@import "@{templateLocal}/stylesheets/widgets/widgets.less";                // Other Widgets
+
+
+
+// Plugin Styles
+// ----------------------
+
+@import "@{templateLocal}/stylesheets/plugins/blog-post-list.less";         // Blog Post List
+@import "@{templateLocal}/stylesheets/plugins/blog-post.less";              // Blog Post
+@import "@{templateLocal}/stylesheets/plugins/ecom-product.less";           // Ecom Product
+@import "@{templateLocal}/stylesheets/plugins/ecom-product-list.less";      // Ecom Product List
+@import "@{templateLocal}/stylesheets/plugins/ecom-basket.less";            // Ecom Basket
+
+
+
+// Page Specific Styles
+// ----------------------
+
+@import "@{templateLocal}/stylesheets/pages/homepage-feature.less";         // Homepage Feature
+
+
+// -----------------------------
+//  Theme Styles
+// -----------------------------
+
+#tdk-toolbar {
+    display: none!important;
+}
+
+// Header
+// ---------------
+
+.template-header {
+    background-color: @color__header--background;
+    .flex-display(flex);
+    .flex-wrap(wrap);
+    .align-items(center);
+    margin: 0;
+    padding: 35px 35px;
+    position: relative;
+    z-index: 999;
+
+    @media @tablet-860px {
+        background-color: @color-swatch1;
+        padding: 20px 75px 20px 25px;
+    }
+
+    @media @height-600px {
+        padding: 10px 75px 10px 25px;
+    }
+
+
+    // Flex position logo / company name
+    &--brand {
+        .flex-display;
+        .align-items(center);
+        max-width: 40%;
+
+        @media only screen and (max-width: 1500px) {
+            max-width: 45%;
+        }
+
+        @media @tablet-860px {
+            .flex-wrap(wrap);
+            max-width: 100%;
+        }
+
+
+        // Add spacing betweent logo and company name
+        .widget:first-child {
+            margin-right: 12px;
+        }
+
+
+        // Stop logo becomign to large
+        .logo-image {
+            max-height: 180px;
+
+            @media @tablet-860px {
+                max-height: 125px;
+            }
+
+            @media @mobile-650px {
+                max-height: 100px;
+            }
+        }
+    }
+}
+
+
+// Add border to default header
+.default-page,
+.ecom-list-page {
+    .template-header {
+        border-bottom: 1px solid darken(@color__container--background, 8%);
+    }
+}
+
+
+// If any kind of feature section is present position the header over it
+[data-widget-type="feature"] + [data-widget-type="responsiveslideshow"] + .template-header,
+[data-widget-type="feature"] + .template-header,
+[data-widget-type="responsiveslideshow"] + .template-header,
+.blog-page .bk-zone + .template-header,
+.ecom-page .template-header {
+    background-color: @color__header--background;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    @media @tablet-860px {
+        background-color: @color__header--background;
+    }
+}
+
+
+// Remove absolute positioning on mobile devices for Ecom
+.ecom-page .template-header {
+    @media @tablet-860px {
+        position: relative;
+    }
+}
+
+
+
+// Main
+// ---------------
+
+html, body {
+    -webkit-overflow-scrolling: touch;
+}
+
+
+// Body background colour
+body {
+    background-color: @color__body--background;
+    height: calc(100% + 1px)!important;
+}
+
+
+// Site container
+.site-container {
+    margin: 0 auto;
+    max-width: 1680px;
+
+
+    // Styling if navigation is open
+    &.animate {
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+
+// Remove margin from widget main zone
+.widget--zone-widget {
+    margin: 0;
+}
+
+
+// Main zone wrapper
+[role="main"],
+.blog-page .bk-zone,
+.blog-list-page .bk-zone,
+.ecom-page .bk-zone,
+.ecom-list-page .bk-zone {
+    background-color: @color__container--background;
+    -webkit-box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.045);
+    -moz-box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.045);
+    box-shadow: 0px 0px 125px 0px rgba(0,0,0,0.045);
+    overflow: hidden;
+
+
+    // Default widget spacing
+    .widget {
+        margin: 0 auto 80px;
+        max-width: 1000px;
+        padding: 0 30px;
+
+        @media @mobile-650px {
+            margin-bottom: 40px;
+        }
+
+        @media @mobile-650px {
+            padding: 0 20px;
+        }
+
+
+        // Adds spacing between first widget and header
+        &:first-child {
+            margin-top: 60px;
+
+            @media @mobile-650px {
+                margin-top: 40px;
+            }
+        }
+
+
+        // Full width widgets
+        &.widget[data-name="responsiveslideshow"],
+        &.widget[data-widget-type="responsiveslideshow"],
+        &.widget[data-name="youtube"],
+        &.widget[data-name="map"],
+        &.widget[data-name="youtube"],
+        &.widget[data-name="twitter"],
+        &.widget[data-name="gallery"],
+        &.widget[data-name="blogpostlist"],
+        &.widget[data-widget-type="blogpostlist"],
+        &.widget[data-name="blogpost"],
+        &.widget[data-widget-type="blogpost"],
+        &.widget[data-name="ecomproductslist"],
+        &.widget[data-name="ecomproduct"],
+        &.widget[data-name="ecomfeaturedproducts"],
+        &.widget[data-name="line"],
+        &.widget[data-name="menusections"],
+        &.widget[data-name="menu"],
+        &.widget[data-name="image"],
+        &.widget[data-name="signupform"],
+        &.widget[data-name="blogsearch"],
+        &.widget[data-name="contactform"],
+        &.widget[data-name="advancedcontactform"] {
+            margin-top: 0!important; // Ensures correct spacing for default pages
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+            max-width: 100%!important;
+
+            @media @mobile-650px {
+                padding: 0!important;
+            }
+
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &.widget[data-name="twitter"]:last-child {
+            margin-bottom: 140px;
+
+            @media @mobile-650px {
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+
+
+// Background colour for main zone section
+[data-widget-type="blogpostlist"],
+[data-widget-type="blogpost"],
+[data-widget-type="ecomproductslist"],
+[data-widget-type="ecomproduct"] {
+    background-color: @color__container--background;
+}
+
+
+// Removes large spacing between some widgets when placed in a certain order
+[data-name="content"] {
+    &+ [data-name="button"],
+    &+ [data-name="clicktocall"],
+    &+ [data-name="content"],
+    &+ [data-name="dropbox"],
+    &+ [data-name="paypalbuynow"],
+    &+ [data-name="socialicons"],
+    &+ [data-name="ecomlegal"] {
+        margin-top: -60px;
+
+        @media @mobile-650px {
+            margin-top: -30px;
+        }
+    }
+}
+
+
+// Stops spacer widget inheriting margin properties given to other widgets
+.widget--zone-widget[data-name="space"] {
+    margin-bottom: 0!important;
+}
+
+
+
+// Responsive columns
+// --------------------
+
+
+[role="main"] [data-name="responsivecolumns"] {
+    max-width: 100%;
+    padding: 0;
+
+
+    .widget {
+        @media @mobile-650px {
+            margin-bottom: 50px!important;
+        }
+    }
+
+
+    .contactform,
+    .signupform,
+    .blogsearch {
+
+
+        &__form {
+            @media @tablet-860px {
+                padding: 35px 25px;
+            }
+        }
+    }
+
+
+    .responsivecolumns .columns-two-left,
+    .responsivecolumns .columns-two-right {
+        margin-right: 0!important;
+        width: 50%;
+
+        @media @mobile-650px {
+            width: 100%;
+        }
+    }
+
+
+    .responsivecolumns .columns-three-left,
+    .responsivecolumns .columns-three-middle,
+    .responsivecolumns .columns-three-right {
+        margin-right: 0!important;
+        width: 33.33%;
+
+        @media @tablet-860px {
+            width: 50%;
+        }
+
+        @media @mobile-650px {
+            width: 100%;
+        }
+    }
+
+
+    .responsivecolumns .columns-four-first,
+    .responsivecolumns .columns-four-second,
+    .responsivecolumns .columns-four-third,
+    .responsivecolumns .columns-four-fourth {
+        margin-right: 0!important;
+        width: 25%;
+
+        @media @desktop-1024px {
+            width: 33.33%;
+        }
+
+        @media @tablet-860px {
+            width: 50%;
+        }
+
+        @media @mobile-650px {
+            width: 100%;
+        }
+    }
+}
+
+[data-name="responsivecolumns"] .widget {
+    padding: 0 30px!important;
+
+    @media @tablet-860px {
+        padding: 0 15px;
+    }
+}
+
+
+
+// Footer
+// ---------------
+
+
+.bk-footer {
+    padding: 30px 0;
+    text-align: center;
+
+
+    [data-widget-type="content"] p {
+        padding-bottom: 0;
+    }
+}

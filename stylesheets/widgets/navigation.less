@@ -1,0 +1,484 @@
+
+// -----------------------------
+//  Navigation
+// -----------------------------
+
+
+
+//  Navigation Positioning
+// --------------------------
+
+
+// Positions navigation to the right of the feature and vertically center to the page
+[data-widget-type="extendednavigation"] {
+    height: 100%;
+    overflow: scroll;
+
+    .flex-display(flex);
+    .justify-content(flex-end);
+    .align-items(center);
+
+    position: absolute!important;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    // Removes scroll to stop navigation icon from being hidden
+    @media @tablet-860px {
+        overflow: initial;
+    }
+
+    @media @mobile-650px {
+        overflow: hidden;
+    }
+}
+
+// Readds scroll to make sure navigation isn't cut off when longer than the viewport
+.animate [data-widget-type="extendednavigation"] {
+    @media @tablet-860px {
+        overflow-y: scroll!important;
+    }
+}
+
+
+// Navigation styling
+.extendednavigation {
+    padding-top: 100px;
+    height: 100%;
+    width: 30%;
+
+    @media @tablet-860px {
+        padding-top: 50px;
+        width: 52%;
+    }
+
+    @media @mobile-650px {
+        width: 62%;
+    }
+
+
+    // Positioning for the navigation element
+    &__navigation-body {
+        height: 100%;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+
+
+    // List container positioning
+    &__navigation-list {
+        margin: 0 auto;
+        max-width: 600px;
+
+        .flex-display(flex);
+        .flex-wrap(wrap);
+
+        @media only screen and (max-height: 560px) {
+            display: block;
+        }
+    }
+
+
+    // Makes the navigation items span full width of the parent container
+    &__navigation-item {
+        display: block;
+        line-height: 1;
+        width: 100%;
+
+
+        &, * {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+
+        // Navigation text styling
+        .item-name {
+            color: @color__navigation--text;
+            display: inline-block;
+            font-size: @font__navigation--font-size;
+            font-weight: @font__navigation--font-weight;
+            letter-spacing: @font__navigation--letter-spacing;
+            margin: 0;
+            padding: 15px 18px;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            white-space: nowrap;
+
+            @media @tablet-860px {
+                font-size: 15px;
+            }
+
+            @media @mobile-650px {
+                font-size: 14px;
+                margin-bottom: 0;
+                padding: 10px 12px 8px;
+                white-space: normal;
+            }
+
+            @media only screen and (max-height: 560px) {
+                font-size: 14px;
+                padding: 10px 0 16px;
+            }
+        }
+    }
+
+    // Navigation selected and hover text styling
+    &__navigation-item.selected .item-name,
+    &__navigation-item:hover .item-name {
+        color: @color__navigation--text--selected;
+    }
+}
+
+
+
+//  Folder Dropdown
+// --------------------------
+
+
+// Active state
+.extendednavigation__navigation-item.folder {
+
+    // Arrow for folder
+    > .item-name:after {
+        content: "\f107";
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 16px;
+        margin-bottom: 0;
+        margin-left: 5px;
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        top: -2px;
+
+        // Folder icon animation
+        .transform(rotate(-90deg));
+        .transition(all 0.15s ease-in-out);
+    }
+
+
+    // Disables hover state of folder navigation
+    &:hover .navigation-list--children {
+        display: none;
+    }
+
+
+    &.folder-open .item-name:after {
+        // Folder icon animation
+        .transform(rotate(0deg));
+    }
+
+
+    // Shows navigation folder when clicked
+    &.folder-open .navigation-list--children {
+        display: block;
+        margin: 10px 0;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+// Hidden state
+.navigation-list--children {
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.02);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.02);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.02);
+    position: relative;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    .transition(opacity 0.5s ease-in-out);
+}
+
+
+
+//  Navigation Icon Toggle - Open
+// -------------------------------
+
+.navigation-toggle {
+
+    // Displays as icon's middle bar
+    background-color: @color__navigation--text!important;
+    background-clip: content-box;
+    display: inline-block;
+
+    height: 45px;
+    width: 46px;
+    margin: 0;
+    padding: 20px 4px 23px 10px;
+
+    position: absolute;
+    right: 30px;
+    text-indent: -9999px;
+    top: 28px;
+    z-index: 99999;
+    .transition(background-color 0.35s ease-in);
+
+    @media @tablet-860px {
+        padding-right: 0;
+        right: 20px;
+        top: 15px;
+        width: 40px;
+    }
+
+    @media only screen and (max-height: 560px) {
+        top: 3px;
+    }
+
+
+    // Top and bottom navigation icon bars
+    &:after,
+    &:before {
+        content: "";
+        height: 2px;
+        width: 32px;
+        position: absolute;
+        left: 10px;
+        display: block;
+        background: @color__navigation--text!important;
+        margin-right: 0;
+        margin-left: 0;
+        .transition(all 0.35s ease-in-out);
+
+        @media @tablet-860px {
+            width: 30px;
+        }
+    }
+
+
+    // Icon top bar
+    &:before {
+        top: 11px;
+    }
+
+
+    // Icon bottom bar
+    &:after {
+        bottom: 14px;
+    }
+}
+
+
+// Home and blog toggle styling
+.home-page,
+.blog-page {
+
+    // Changes navigation icon to white when overlayed over an image
+    .navigation-toggle,
+    .navigation-toggle:before,
+    .navigation-toggle:after {
+        background-color: white;
+
+        @media @tablet-860px {
+            background-color:  @color__navigation--text--selected;
+        }
+    }
+}
+
+
+
+//  Navigation Icon Toggle - Close
+// --------------------------------
+
+
+// Toggle icon open state
+.animate .navigation-toggle {
+    background-color: transparent;
+    .transition(background-color 0s ease-out);
+    z-index: 99999;
+
+
+    // Icon top bar
+    &:before {
+        background-color: @color__navigation--text--selected;
+        top: 22px;
+        .transform(rotate(45deg));
+
+        @media @tablet-860px {
+            background-color: @color__navigation--text--selected;
+        }
+    }
+
+
+    // Icon bottom bar
+    &:after {
+        background-color: @color__navigation--text--selected;
+        bottom: 21px;
+        .transform(rotate(-45deg));
+
+        @media @tablet-860px {
+            background-color: @color__navigation--text--selected;
+        }
+    }
+}
+
+
+// When navigation is open apply this styling to navigation toggle for home and blog page
+.animate .home-page,
+.animate .blog-page {
+
+    .navigation-toggle {
+        background-color: transparent!important;
+
+        &:before,
+        &:after {
+            background-color: @color__navigation--text--selected;
+        }
+    }
+}
+
+
+
+//  Feature / Navigation Perspective Effect
+// -------------------------------------------
+
+
+// Makes sure the feature / navigation are full height and width
+.full-nav,
+.full-nav body,
+.nav-effect,
+.template-feature {
+    height: 700px;
+    width: 100%;
+}
+
+
+// Background for the perspective effect
+.nav-effect {
+    position: relative;
+
+
+    // Container for the feature / navigation and header elements
+    &--transform {
+        outline: 1px solid rgba(0,0,0,0);
+
+        min-height: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 10;
+
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        transition: transform 0.4s, -webkit-transform 0.4s;
+
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        .transform(translateZ(0) translateX(0) rotateY(0deg)); /* reset transforms (Chrome bug) */
+
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            .transition(opacity 0.4s);
+        }
+    }
+
+
+    // Adds perspective effect to feature
+    &.animate {
+        -webkit-perspective: 1800px;
+        perspective: 1800px;
+    }
+
+
+    // Moves feature off canvas to display navigation
+    &.animate .nav-effect--transform {
+        box-shadow: 0px 0px 150px 0px rgba(0,0,0,0.15);
+        position: absolute;
+        overflow: scroll;
+        width: 70%;
+        height: 100%;
+        cursor: initial;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        &:after,
+        &:before {
+            opacity: 1;
+            height: 100%;
+            .transition(opacity 0.3s);
+        }
+
+
+        // Fixes a rendering bug in Chrome on Windows
+        + div {
+            .transform(translateZ(-1px));
+        }
+    }
+
+
+    // Remove wrapper margin when navigation is open
+    &.animate .nav-effect--wrapper {
+        margin: 0;
+    }
+}
+
+// If transforms cannot be used
+.no-csstransforms3d .nav-effect.animate .nav-effect--transform {
+    left: -75%;
+}
+
+
+// Navigation transforms
+.nav-effect {
+
+    [data-widget-type="extendednavigation"] .item-name {
+        opacity: 0;
+        .transform(translateX(100px) translateZ(-1000px));
+
+        -webkit-transition: opacity 0.4s, -webkit-transform 0.4s, color 0.4s;
+        transition: opacity 0.4s, -webkit-transform 0.4s, color 0.4s;
+        transition: transform 0.4s, opacity 0.4s, color 0.4s;
+        transition: transform 0.4s, opacity 0.4s, -webkit-transform 0.4s, color 0.4s;
+    }
+
+
+    &.animate [data-widget-type="extendednavigation"] .item-name {
+        opacity: 1;
+        .transform(translateX(0) translateZ(0));
+    }
+}
+
+
+
+// Ecommerce header styling
+.ecom-page .template-header {
+    @media @desktop-1024px {
+        background-color: @color__header--background;
+        position: relative;
+    }
+}
+
+
+// Default Page nav effect
+.default-page {
+    .nav-effect--transform {
+        overflow: visible!important;
+    }
+}
+
+
+//  Hide Navigation Overlay
+// --------------------------
+
+[data-widget-type="extendednavigation"] .widget-overlay,
+[data-widget-type="extendednavigation"] .widget-overlay ul.widget__list.list--options {
+    display: none!important;
+}
+
+.animate [data-widget-type="extendednavigation"] .widget-overlay {
+    display: block!important;
+}
+

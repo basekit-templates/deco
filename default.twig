@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="nav-effect--container  default-page">
+
+
+    <!-- Feature Containers -->
+    <div class="nav-effect--transform">
+        <div class="nav-effect--wrapper"  id="main">
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <div role="main">
+
+                <!-- Main Zone -->
+                {{zone('main')|raw}}
+
+            </div>
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</div>
+
+{% endblock %}

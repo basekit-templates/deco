@@ -1,0 +1,174 @@
+.blogpostlist {
+    padding: 0 35px;
+
+    @media @mobile-650px {
+        padding: 0 25px;
+    }
+
+    &__post-items {
+        .flex-display;
+        .flex-wrap(wrap);
+    }
+
+    &__post-article {
+        .flex-display;
+        .flex-wrap(wrap);
+        .align-content(flex-start);
+        .flex-grow(1);
+        max-width: 33.33%;
+        padding-right: 30px;
+
+        @media only screen and (max-width: 1200px) {
+            .flex(1 0 50%);
+            max-width: 50%;
+        }
+
+        @media @tablet-860px {
+            .flex(1 0 100%);
+            max-width: 100%;
+            padding-right: 0;
+        }
+
+        &:nth-child(3n) {
+            padding-right: 0;
+
+            @media only screen and (max-width: 1200px) {
+                padding-right: 30px;
+            }
+
+            @media @tablet-860px {
+                padding-right: 0;
+            }
+        }
+
+        &:nth-child(2n) {
+            @media only screen and (max-width: 1200px) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__post-image {
+        .flex-order(1);
+        width: 100%;
+    }
+
+    &__image-link {
+        background-size: cover;
+        background-position: center;
+        height: 350px;
+
+        @media @desktop-1024px {
+            height: 300px;
+        }
+
+        @media @mobile-650px {
+            height: 200px;
+        }
+    }
+
+    &__image {
+        display: none;
+        visibility: hidden;
+    }
+
+    &__post-content {
+        .flex-order(3);
+        margin-top: 0;
+        padding: 0 25px;
+        text-align: center;
+        width: 100%;
+
+        @media @mobile-650px {
+            padding: 0;
+        }
+
+        p {
+            font-size: bkscale(@font__p--font-size, 0.95);
+            line-height: bkscale(@font__p--line-height, 0.8);
+        }
+    }
+
+    &__post-title {
+        color: @color__h2--text;
+        font-size: 28px;
+        line-height: 38px;
+        padding-bottom: 12px;
+    }
+
+    &__title-link {
+        color: @color__h2--text;
+    }
+
+    &__read-more {
+        background-color: @color__button--background;
+        color: @color__button--text;
+        display: inline-block;
+        font-family: @font__button--font-family;
+        font-size: 13px;
+        font-weight: @font__button--font-weight;
+        letter-spacing: @font__button--letter-spacing;
+        line-height: @font__button--line-height;
+        margin-top: 6px;
+        padding: 5px 14px;
+        text-transform: uppercase;
+    }
+
+    &__post-footer {
+        .flex-order(2);
+        padding: 20px 30px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__timestamp {
+        display: block;
+        font-weight: 500;
+        margin: 30px 0 10px!important;
+    }
+
+    &__post-list-footer {
+        padding: 0 0 30px;
+        margin-top: 50px;
+    }
+
+    &__pagination-list {
+        .flex-display;
+        .justify-content(space-between);
+    }
+
+    &__button {
+        background: transparent;
+        border: 1px solid darken(@color__container--background, 10%);
+        color: @color__p--text;
+        display: inline-block;
+        font-size: 14px;
+        margin-top: 0;
+
+        &:before,
+        &:after {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
+
+
+// Styles for responsive columns
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+
+    .blogpostlist__post-items {
+        display: block;
+    }
+
+    .blogpostlist__post-article {
+        max-width: 100%;
+    }
+}

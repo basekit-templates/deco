@@ -1,0 +1,48 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="template-feature  nav-effect--container  ecom-page">
+
+
+    <!-- Feature Containers -->
+    <div class="template-feature--container  nav-effect--transform">
+        <div class="template-feature--wrapper  nav-effect--wrapper"  id="main">
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <!-- Main Zone -->
+            {{zone('main')|raw}}
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <script>
+        if($(".ecomproduct__product-gallery").length == 0)
+        {
+           $("body").addClass("product-one-image");
+        }
+    </script>
+
+{% endblock %}

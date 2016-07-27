@@ -1,0 +1,257 @@
+
+// -----------------------------
+//  Twitter Widget
+// -----------------------------
+
+
+// Widget container spacing
+[role="main"] .widget[data-name="twitter"] {
+    margin-bottom: 140px;
+    height: 100%;
+}
+
+
+// Full width widget
+.twitter {
+    overflow: visible!important;
+    height: 100%!important;
+    width: 100%!important;
+
+
+    // Twitter list
+    &__tweet-list {
+        background-color: @color__twitter--background;
+        border-top: 1px solid darken(@color__twitter--background, 4%);
+        float: left;
+        height: 100%!important;
+    }
+
+
+    // Twitter list item
+    &__tweet-item {
+        list-style: none;
+        margin-bottom: 0;
+        overflow: visible!important;
+        text-align: center;
+    }
+
+    // Twitter list item
+    &__tweet-list .tweet-item {
+        float: left;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+
+    // Twitter avatar container
+    &__avatar {
+        padding-bottom: 0;
+        padding-top: 0;
+        position: relative;
+        margin-top: -20px;
+        z-index: 2;
+    }
+
+    // Twitter avatar link
+    &__avatar-link {
+        margin: 0 auto;
+    }
+
+    // Twitter avatar image
+    &__avatar-image {
+        border: 10px solid @color__twitter--background;
+        border: 10px solid #F5F5F5;
+        border-radius: 200px;
+        height: 75px;
+        width: 75px;
+    }
+
+
+    // Twitter account name link
+    &__account-link {
+        color: darken(@color__twitter--background, 28%);
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        position: relative;
+        text-transform: uppercase;
+        top: -10px;
+
+        // Adds @ icon before account name
+        &:before {
+            color: darken(@color__twitter--background, 20%);
+            content: "@";
+            font-size: 11px;
+            position: relative;
+            left: 2px;
+            top: -1px;
+        }
+    }
+
+
+    // Tweet content wrapper
+    &__tweet-wrap {
+        margin: 0 auto;
+        max-width: 680px;
+        padding: 0;
+        position: relative;
+    }
+
+
+    //  Tweet content
+    &__tweet-content {
+        color: lighten(@color__h3--text, 10%);
+        font-size: @font__h3--font-size;
+        font-size: 26px;
+        line-height: @font__h3--line-height;
+        line-height: 40px;
+        padding: 0 15px 15px;
+        word-break: break-word;
+
+        a {
+            color: lighten(@color__h3--text, 10%);
+        }
+
+        @media @tablet-860px {
+            font-size: 18px;
+            line-height: 32px;
+            margin-top: -5px;
+            padding: 0 20px 15px;
+
+            a {
+                font-size: 17px;
+            }
+        }
+
+        @media @mobile-650px {
+            font-size: 16px;
+            line-height: 28px;
+
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
+
+    // Tweet metadata - date etc
+    &__tweet-meta {
+        display: none;
+        visibility: hidden;
+    }
+
+    // Tweet timestamp
+    &__timestamp {
+        color: #8A8A8A!important;
+        font-size: 10px!important;
+        font-weight: 400!important;
+        margin-right: 0!important;
+    }
+
+
+    // Retweeted mention
+    &__retweeted-by {
+        display: none;
+    }
+
+
+    // Hides data about what platform it was tweeted from
+    &__via {
+        display: none;
+        visibility: hidden;
+
+        & + [rel='nofollow'] {
+            display: none;
+            visibility: hidden;
+        }
+    }
+}
+
+
+[data-name="responsivecolumns"] .widget[data-name="twitter"] {
+    @media @mobile-650px {
+        padding: 0!important;
+    }
+}
+
+.responsivecolumns .columns-two-left,
+.responsivecolumns .columns-two-right,
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+    .twitter,
+    .tweet-list {
+        min-height: 255px;
+        overflow: hidden!important;
+    }
+
+    .twitter__avatar {
+        margin-top: 0;
+    }
+
+    .twitter__tweet-content {
+        font-size: 18px;
+        line-height: 32px;
+
+        @media @mobile-650px {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    .dots {
+        position: absolute;
+        left: 30px;
+        right: 30px;
+
+        @media @mobile-650px {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+
+
+// Twitter slideshow dots
+// -------------------------
+
+.dots {
+    background-color: @color__twitter--background;
+    border-bottom: 1px solid darken(@color__twitter--background, 4%);
+    margin: -1px auto 0;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 10px 25px;
+    text-align: center;
+
+    @media @mobile-650px {
+        bottom: -36px;
+        padding: 0 25px;
+    }
+
+    .dot {
+        background-color: darken(@color__twitter--background, 25%);
+        border-radius: 100px;
+        display: inline-block;
+        margin-right: 7px;
+        height: 11px;
+        width: 11px;
+
+        @media @mobile-650px {
+            height: 8px;
+            width: 8px;
+        }
+
+        &.active {
+            background-color: @color__button--background;
+        }
+    }
+}

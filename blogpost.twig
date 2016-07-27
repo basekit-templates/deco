@@ -1,0 +1,57 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="template-feature  nav-effect--container  blog-page">
+
+
+    <!-- Feature Containers -->
+    <div class="template-feature--container  nav-effect--transform">
+        <div class="template-feature--wrapper  nav-effect--wrapper"  id="main">
+
+
+            <!-- Main Zone -->
+            {{zone('main')|raw}}
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <!-- Smooth Scroll Arrow -->
+            <div class="scroll-arrow">
+                <a class="arrow-container" href="#post-content">
+                    <span class="arrow-down"></span>
+                </a>
+            </div>
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    <script>
+    $(".arrow-container").click(function() {
+        $('html, body').animate({
+            scrollTop: $(".blogpost__post-content").offset().top
+        }, 2000);
+    });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="nav-effect--container  ecom-list-page">
+
+
+    <!-- Feature Containers -->
+    <div class="nav-effect--transform">
+        <div class="nav-effect--wrapper"  id="main">
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <div class="filter-container">
+
+
+                <!-- Main Zone -->
+                {{zone('main')|raw}}
+
+
+                <div class="toggle-filter">
+                   <div class="toggle-items">
+                        <div class="toggle-item"></div>
+                        <div class="toggle-item"></div>
+                        <div class="toggle-item"></div>
+                   </div>
+                   <div class="toggle-active"></div>
+                </div>
+
+
+            </div>
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        $(document).on("click", ".toggle-filter", function() {
+            $( "body" ).toggleClass( "filters-open" );
+        });
+
+
+        $(function() {
+
+        $(".toggle-filter").click(function() {
+
+            $(this).prepend('<span class="animate"></span>')
+                $(".animate").animate({
+                    width: 80,
+                    height: 80,
+                    opacity: 0
+                 },
+                 500,
+                 function() {
+                    $(this).remove();
+                 });
+
+                $(this).toggleClass('active');
+           })
+        })
+    </script>
+{% endblock %}

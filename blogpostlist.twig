@@ -1,0 +1,36 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+
+<!-- Navigation Container -->
+<div class="nav-effect--container  blog-list-page">
+
+
+    <!-- Feature Containers -->
+    <div class="nav-effect--transform">
+        <div class="nav-effect--wrapper"  id="main">
+
+
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+
+            <!-- Main Zone -->
+            {{zone('main')|raw}}
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
+
+
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
+
+</div>
+
+
+{% endblock %}

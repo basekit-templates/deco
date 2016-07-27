@@ -1,0 +1,132 @@
+
+// ------------------------------------
+//  Contact Form
+// ------------------------------------
+
+
+// Contact form full width background
+[data-name="contactform"],
+[data-name="advancedcontactform"],
+[data-name="signupform"],
+[data-name="blogsearch"] {
+    background-color: @color__form--background;
+    border-top: 1px solid darken(@color__twitter--background, 4%);
+    border-bottom: 1px solid darken(@color__twitter--background, 4%);
+}
+
+
+// Contact / signup form styling
+.contactform,
+.advancedcontactform,
+.signupform,
+.blogsearch {
+
+
+    &__form {
+        margin: 0 auto;
+        max-width: 960px;
+        padding: 70px 0;
+
+        @media @tablet-860px {
+            padding: 50px 35px;
+        }
+
+        @media @mobile-650px {
+            padding: 35px 25px;
+        }
+    }
+
+
+    &_form-group {
+        margin-bottom: 20px;
+    }
+
+
+    &__legend {
+        font-size: @font__h2--font-size;
+        line-height: @font__h2--line-height;
+        margin-bottom: 35px;
+        text-align: center;
+        width: 100%;
+    }
+
+
+    &__input,
+    &__textarea {
+        background-color: white!important;
+    }
+
+
+    &__button {
+        margin-top: 5px;
+        height: 55px;
+        width: 100%;
+    }
+}
+
+
+.advancedcontactform {
+
+
+    &__option-list {
+        margin: 0;
+
+        .label {
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    &__form-group > .label {
+        display: block;
+        line-height: 2;
+        vertical-align: initial;
+    }
+
+    .option-item--radio,
+    .option-item--checkbox {
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    &__select {
+        background-color: white;
+        border: 1px solid #ddd;
+    }
+
+}
+
+
+.signupform,
+.blogsearch {
+
+
+    &__form-body {
+        .flex-display;
+        .flex-wrap(nowrap);
+        .align-items(flex-end);
+
+        @media @mobile {
+            display: block;
+        }
+
+        .signupform__form-group:first-child {
+            .flex(1 1 auto);
+        }
+    }
+
+
+    &__button {
+        margin-top: 0;
+        min-width: 100px;
+        height: 54px;
+    }
+}
+
+
+.blogsearch,
+.signupform {
+    .form-group:first-child {
+        .flex-grow(1);
+    }
+}
