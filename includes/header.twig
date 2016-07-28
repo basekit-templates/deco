@@ -1,13 +1,15 @@
 <!-- Company Name and Logo -->
  <header class="template-header">
     <div class="template-header--brand">
-    <div class="social-icons">
-        {{widget('profile', 'footerprofilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+        <div class="social-icons">
+            {{widget('profile', 'footerprofilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
         </div>
-    <div class="logo-companyname">
-
-        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.jpg'), "showTplWidget":"0"})|raw}}
-        {{widget('companyname', 'header-companyname', {"business": "profile"})|raw}}
+        <div class="logo-companyname">
+            {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.jpg'), "showTplWidget":"0"})|raw}}
+            {{widget('companyname', 'header-companyname', {"business": "profile"})|raw}}
+        </div>
+        <div class="nav-icon">
+            <button class="js-pull  navigation-toggle  icon  icon--bars  extendednavigation__navigation-toggle">Menu</button>
         </div>
     </div>
 </header>

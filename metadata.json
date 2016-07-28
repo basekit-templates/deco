@@ -6,8 +6,7 @@
     "pageTypes": ["home"],
     "screenshot":"bergen-screenshot.jpg",
      "images":[
-         "images/slideshow-1.jpg",
-         "images/slideshow-2.jpg",
+         "images/image1.jpg",
          "images/feature.jpg"
     ],
     "colorSwatches":
@@ -15,7 +14,7 @@
         "Swatch 1": {
             "color1":"#ffffff",
             "color2":"#FBE6A1",
-            "color3":"#494949",
+            "color3":"#000000",
             "color4":"#424D51",
             "color5":"#424D51",
             "color6":"#ffffff",
@@ -23,9 +22,9 @@
         }
     },
     "fontSwatch": {
-       "title": "Rubik",
+       "title": "Poppins",
         "font1": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "32px",
             "font-weight": "400",
             "line-height": "54px",
@@ -33,7 +32,7 @@
             "letter-spacing": "inherit"
         },
         "font2": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "24px",
             "font-weight": "400",
             "line-height": "36px",
@@ -41,7 +40,7 @@
             "letter-spacing": "inherit"
         },
         "font3": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "22px",
             "font-weight": "400",
             "line-height": "42px",
@@ -49,7 +48,7 @@
             "letter-spacing": "inherit"
         },
         "font4": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "20px",
             "font-weight": "400",
             "line-height": "36px",
@@ -57,7 +56,7 @@
             "letter-spacing": "inherit"
         },
         "font5": {
-            "font-family": "\"Droid Serif\", Georgia, serif",
+            "font-family": "\"Arimo\", \"Helvetica\", Arial, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "27px",
@@ -76,7 +75,7 @@
             "background-color-hover": "darken(@color-swatch3,8%)"
         },
         "font7": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "27px",
@@ -86,15 +85,15 @@
             "background-color-hover": "darken(@color-swatch3,5%)"
         },
         "font8": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "38px",
-            "font-weight": "400",
+            "font-weight": "700",
             "line-height": "48px",
             "color": "@color-swatch1",
             "letter-spacing": "inherit"
         },
         "font9": {
-            "font-family": "\"Rubik\", Geneva, \"Lucida Console\", sans-serif",
+            "font-family": "\"Arimo\", \"Helvetica\", Arial, sans-serif",
             "font-size": "20px",
             "font-weight": "400",
             "line-height": "27px",
@@ -116,7 +115,7 @@
             "color__secondary": "#f5f6f7"
         },
         "site": {
-            "color__body--background": "#F5F3F3",
+            "color__body--background": "black",
             "color__container--background": "#fff",
             "color__link--text": "#1e1e1e",
             "font__companyname--font-family": "@font-swatch10-font-family",
@@ -171,7 +170,7 @@
             "font__navigation--line-height": "26px",
             "font__navigation--letter-spacing": "2px",
             "color__navigation--text": "#646464",
-            "color__navigation--text--selected": "#1e1e1e"
+            "color__navigation--text--selected": "white"
         },
         "form": {
             "color__form-legend--text" : "#1e1e1e",
@@ -185,7 +184,7 @@
             "color__button--text--hover" : "@color__button--text",
             "font__button--font-family" : "@font-swatch7-font-family",
             "font__button--font-size" : "15px",
-            "font__button--font-weight" : "400",
+            "font__button--font-weight" : "700",
             "font__button--line-height" : "26px",
             "font__button--letter-spacing" : "2px"
         },
@@ -217,7 +216,7 @@
             "color__feature--background": "#fff",
             "font__feature-headline--font-family" : "@font-swatch8-font-family",
             "font__feature-headline--font-size" : "45px",
-            "font__feature-headline--font-weight" : "300",
+            "font__feature-headline--font-weight" : "700",
             "font__feature-headline--line-height" : "53px",
             "color__feature-headline--text" : "@color__h2--text",
             "font__feature-headline--letter-spacing": "3px",

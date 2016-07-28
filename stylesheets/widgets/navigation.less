@@ -130,7 +130,11 @@
     }
 }
 
-
+.extendednavigation__navigation-item.folder .item-name {
+    &:hover {
+        color: @color__navigation--text--selected;
+    }
+}
 
 //  Folder Dropdown
 // --------------------------
@@ -138,6 +142,10 @@
 
 // Active state
 .extendednavigation__navigation-item.folder {
+
+    .item-name {
+        color: @color__navigation--text;
+    }
 
     // Arrow for folder
     > .item-name:after {
@@ -176,6 +184,9 @@
         max-height: none;
         opacity: 1;
         visibility: visible;
+        .item-name:hover {
+            color: @color-swatch3;
+        }
     }
 }
 
@@ -210,22 +221,14 @@
     margin: 0;
     padding: 20px 4px 23px 10px;
 
-    position: absolute;
-    right: 30px;
+    position: relative;
     text-indent: -9999px;
-    top: 28px;
     z-index: 99999;
     .transition(background-color 0.35s ease-in);
 
     @media @tablet-860px {
         padding-right: 0;
-        right: 20px;
-        top: 15px;
         width: 40px;
-    }
-
-    @media only screen and (max-height: 560px) {
-        top: 3px;
     }
 
 
@@ -259,6 +262,11 @@
     &:after {
         bottom: 14px;
     }
+}
+
+.extendednavigation .navigation-toggle {
+    display: none;
+    visibility: hidden;
 }
 
 
@@ -360,10 +368,10 @@
         position: relative;
         z-index: 10;
 
-        -webkit-transition: -webkit-transform 0.4s;
-        transition: -webkit-transform 0.4s;
-        transition: transform 0.4s;
-        transition: transform 0.4s, -webkit-transform 0.4s;
+        -webkit-transition: -webkit-transform 0.8s;
+        transition: -webkit-transform 0.8s;
+        transition: transform 0.8s;
+        transition: transform 0.8s, -webkit-transform 0.8s;
 
         -webkit-transform-origin: 50% 50%;
         transform-origin: 50% 50%;
@@ -381,15 +389,8 @@
 
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
-            .transition(opacity 0.4s);
+            .transition(opacity 0.8s);
         }
-    }
-
-
-    // Adds perspective effect to feature
-    &.animate {
-        -webkit-perspective: 1800px;
-        perspective: 1800px;
     }
 
 

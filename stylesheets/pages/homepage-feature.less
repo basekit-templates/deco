@@ -14,6 +14,10 @@
         position: initial;
     }
 
+    @media @mobile-650px {
+        height: 400px;
+    }
+
     // Removes the max-width if the slideshow is not visible
     .widget:last-of-type,
     [data-widget-type="responsiveslideshow"] {
@@ -41,29 +45,15 @@
         .flex(1 0 45%);
     }
 
-    // Make feature full-width on smaller screens
-    @media @tablet-860px {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 0 25px;
-        position: absolute;
-        bottom: 15px;
-        left: 0;
-        right: 0;
-    }
-
-    @media @mobile-650px {
-        bottom: 20px;
-        margin: 0 15px;
-    }
-
     // Makes feature content span full width/height of its container
     .feature,
     .feature__background-image,
     .feature__content-wrap {
         height: 700px;
         width: 100%;
+        @media @mobile-650px{
+            height: 400px;
+        }
     }
 
     .feature__background-image {
@@ -88,18 +78,19 @@
             padding: 25px;
         }
 
-        @media @height-600px {
+        @media @mobile-650px {
             padding: 15px;
+            height: 400px;
         }
     }
 
     // Adds max-width to headline and strapline
     .feature__content-inner-wrap {
         margin: 0 auto;
-        max-width: 650px;
+        max-width: 550px;
         z-index: 2;
         background-color: @color__feature-content--background;
-        padding: 40px;
+        padding: 80px 60px;
     }
 
     // Feature headline text
@@ -152,8 +143,9 @@
     button.feature__button {
         background-color: @color__feature-button--background;
         color: @color__feature-button--text;
-        margin-top: 18px;
+        margin-top: 10px;
         padding: 14px 24px;
+        width: 100%;
 
         @media @tablet-860px {
             margin-top: 20px;
@@ -178,15 +170,6 @@
 
 // If either the pagination or slideshow buttons are present alone, position to acommodate
 .has-slide-navigation {
-    [data-widget-type="feature"] {
-        @media @tablet-860px {
-            bottom: 55px;
-        }
-
-        @media only screen and (max-height: 560px) {
-            bottom: 15px;
-        }
-    }
 
 
    [data-widget-type="responsiveslideshow"] {
