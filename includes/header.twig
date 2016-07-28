@@ -1,7 +1,13 @@
 <!-- Company Name and Logo -->
  <header class="template-header">
     <div class="template-header--brand">
-        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png'), "showTplWidget":"0"})|raw}}
+    <div class="social-icons">
+        {{widget('profile', 'footerprofilesocialicons', { 'profileType':'socialicons', 'socialicons':'profile'})|raw}}
+        </div>
+    <div class="logo-companyname">
+
+        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.jpg'), "showTplWidget":"0"})|raw}}
         {{widget('companyname', 'header-companyname', {"business": "profile"})|raw}}
+        </div>
     </div>
 </header>

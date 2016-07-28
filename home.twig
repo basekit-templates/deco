@@ -3,15 +3,18 @@
 
 
 <!-- Navigation Container -->
-<div class="template-feature  nav-effect--container  home-page">
+<div class="template-feature nav-effect--container  default-page">
 
 
     <!-- Feature Containers -->
-    <div class="template-feature--container  nav-effect--transform">
-        <div class="template-feature--wrapper  nav-effect--wrapper">
+    <div class="nav-effect--transform">
+        <div class="nav-effect--wrapper"  id="main">
 
 
-            <!-- Feature Widget -->
+            <!-- Header -->
+            {% include "includes/header.twig" %}
+
+                        <!-- Feature Widget -->
             {{widget('feature', 'header-feature', {
                 "header": "profile",
                 'positionTopPercentage': '0',
@@ -21,8 +24,16 @@
             })|raw}}
 
 
-            <!-- Header -->
-            {% include "includes/header.twig" %}
+            <div role="main">
+
+                <!-- Main Zone -->
+                {{zone('main')|raw}}
+
+            </div>
+
+
+            <!-- Footer -->
+            {% include "includes/footer.twig" %}
 
 
         </div>
@@ -33,18 +44,5 @@
     {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
 
 </div>
-
-
-<div role="main">
-
-    <!-- Main Zone -->
-    {{zone('main')|raw}}
-
-</div>
-
-
-<!-- Footer -->
-{% include "includes/footer.twig" %}
-
 
 {% endblock %}

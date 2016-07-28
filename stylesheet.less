@@ -109,11 +109,7 @@
     &--brand {
         .flex-display;
         .align-items(center);
-        max-width: 40%;
-
-        @media only screen and (max-width: 1500px) {
-            max-width: 45%;
-        }
+        max-width: 100%;
 
         @media @tablet-860px {
             .flex-wrap(wrap);
@@ -140,7 +136,93 @@
             }
         }
     }
+
+    .social-icons {
+        .social-link {
+            background-color: transparent;
+        }
+        .social-link:before {
+            color: @color-swatch3;
+        }
+    }
+    .social-item:hover .social-name {
+        display: none;
+    }
+    .social-list {
+        display: inline-block;
+
+
+    // When hover is active show default hover state over UL
+        &:hover > .social-item {
+
+        // Default hover state background colour
+        .social-link {
+            background-color: transparent;
+        }
+
+
+        // When hovering anchor link show brand colours as background
+        &:hover .social-link {
+
+            // Twitter background colour
+            &.icon {
+                background-color: transparent;
+
+                .social-name:after {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
 }
+}
+
+.template-header--brand {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 100%;
+    }
+
+.social-icons {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    -webkit-flex: 0 0 33%;
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    }
+
+.logo-companyname  {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+    -webkit-flex: 0 0 33%;
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    text-align: center;
+    }
 
 
 // Add border to default header
@@ -196,7 +278,7 @@ body {
 
 // Site container
 .site-container {
-    
+
     // Styling if navigation is open
     &.animate {
         margin: 0;
