@@ -1,9 +1,4 @@
 .blogpostlist {
-    padding: 0 35px;
-
-    @media @mobile-650px {
-        padding: 0 25px;
-    }
 
     &__post-items {
         .flex-display;
@@ -12,45 +7,48 @@
 
     &__post-article {
         .flex-display;
-        .flex-wrap(wrap);
-        .align-content(flex-start);
-        .flex-grow(1);
-        max-width: 33.33%;
-        padding-right: 30px;
+        .flex-direction(@direction: row);
+        .flex-wrap(@wrap: nowrap);
+        .justify-content(@justify: center);
+        .align-content(@align: center);
+        .align-items(@align: center);
+
+        width: 100%;
+        padding: 2% 15%;
+        margin-bottom: 0;
+        .transition;
+
+        &:hover {
+            background-color: #eeeeee;
+        }
 
         @media only screen and (max-width: 1200px) {
-            .flex(1 0 50%);
-            max-width: 50%;
+            padding: 2% 5%;
         }
 
         @media @tablet-860px {
-            .flex(1 0 100%);
             max-width: 100%;
-            padding-right: 0;
+            padding: 2% 3%;
         }
-
-        &:nth-child(3n) {
-            padding-right: 0;
-
-            @media only screen and (max-width: 1200px) {
-                padding-right: 30px;
-            }
-
-            @media @tablet-860px {
-                padding-right: 0;
-            }
-        }
-
-        &:nth-child(2n) {
-            @media only screen and (max-width: 1200px) {
-                padding-right: 0;
-            }
+        @media @mobile-650px {
+            width: 100%;
+            display: block;
+            padding: 5%;
         }
     }
 
     &__post-image {
-        .flex-order(1);
+        .flex-order(@order: 3);
+        .flex(1 1 30%);
+        .align-self (@align: center);
+
         width: 100%;
+
+        @media @mobile-650px {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
     }
 
     &__image-link {
@@ -73,13 +71,17 @@
     }
 
     &__post-content {
-        .flex-order(3);
-        margin-top: 0;
-        padding: 0 25px;
-        text-align: center;
+        .flex-order(@order: 2);
+        .flex (1 1 60%);
+        .align-self (@align: center);
+
+        padding: 0 45px;
         width: 100%;
+        margin: 0;
 
         @media @mobile-650px {
+            width: 100%;
+            display: block;
             padding: 0;
         }
 
@@ -115,16 +117,32 @@
     }
 
     &__post-footer {
-        .flex-order(2);
+        .flex-order(@order: 1);
+        .flex(1 1 0);
+        .align-self(@align: center);
+
         padding: 20px 30px 0;
         text-align: center;
         width: 100%;
+        @media @tablet-860px {
+            padding: 0!important;
+        }
+
+        @media @mobile-650px {
+            width: 100%;
+            display: block;
+        }
+
     }
 
     &__timestamp {
-        display: block;
         font-weight: 500;
         margin: 30px 0 10px!important;
+        border: 5px solid #eeeeee;
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+        display: inline-block;
     }
 
     &__post-list-footer {

@@ -3,7 +3,7 @@
 
 
 <!-- Navigation Container -->
-<div class="nav-effect--container  blog-list-page">
+<div class="nav-effect--container  default-page">
 
 
     <!-- Feature Containers -->
@@ -15,8 +15,12 @@
             {% include "includes/header.twig" %}
 
 
-            <!-- Main Zone -->
-            {{zone('main')|raw}}
+            <div role="main">
+
+                <!-- Main Zone -->
+                {{zone('main')|raw}}
+
+            </div>
 
 
             <!-- Footer -->
@@ -31,6 +35,5 @@
     {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
 
 </div>
-
 
 {% endblock %}
