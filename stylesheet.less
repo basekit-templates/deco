@@ -97,9 +97,15 @@
 
     @media @tablet-860px {
         background-color: @color-swatch1;
-        padding: 25px 35px 10px;
     }
 
+    @media @tablet {
+        padding: 35px 35px 30px;
+    }
+
+    @media @mobile-650px {
+        padding: 25px 35px 15px;
+    }
 
     // Flex position logo / company name
     &--brand {
@@ -138,6 +144,7 @@
             margin-right: 0;
             @media @tablet {
                 display: inline-block;
+                margin-bottom: 0;
             }
         }
     }

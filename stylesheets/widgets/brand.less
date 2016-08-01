@@ -5,6 +5,10 @@
 .companyname {
     line-height: @font__companyname--line-height;
 
+    @media @tablet {
+        margin: 10px 0;
+    }
+
     @media @mobile-650px {
         line-height: bkscale(@font__companyname--line-height, 0.88);
     }
