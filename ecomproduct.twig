@@ -3,20 +3,24 @@
 
 
 <!-- Navigation Container -->
-<div class="template-feature  nav-effect--container  ecom-page">
+<div class="nav-effect--container  default-page">
 
 
     <!-- Feature Containers -->
-    <div class="template-feature--container  nav-effect--transform">
-        <div class="template-feature--wrapper  nav-effect--wrapper"  id="main">
+    <div class="nav-effect--transform">
+        <div class="nav-effect--wrapper"  id="main">
 
 
             <!-- Header -->
             {% include "includes/header.twig" %}
 
 
-            <!-- Main Zone -->
-            {{zone('main')|raw}}
+            <div role="main">
+
+                <!-- Main Zone -->
+                {{zone('main')|raw}}
+
+            </div>
 
 
             <!-- Footer -->
@@ -31,18 +35,5 @@
     {{widget('extendednavigation', 'navigation', {'align': 'center'})|raw}}
 
 </div>
-
-
-{% endblock %}
-
-
-{% block scripts %}
-
-    <script>
-        if($(".ecomproduct__product-gallery").length == 0)
-        {
-           $("body").addClass("product-one-image");
-        }
-    </script>
 
 {% endblock %}
