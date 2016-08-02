@@ -514,19 +514,30 @@ form.ecomproductslist__form {
 .responsivecolumns .columns-four-third,
 .responsivecolumns .columns-four-fourth {
 
-
-    .ecomproductslist__product-list {
-        display: block;
+    .ecomfeaturedproducts,
+    .ecomproductslist {
+    
+        .product-list {
+            display: block;
+        }
+    
+    
+        .product-item {
+            max-width: 100%;
+        }
+    
+        .product-item-article {
+            display: block;
+            width: 100%;
+            padding: 2%;
+        }
     }
+}
 
-
-    .ecomproductslist__product-item {
-        max-width: 100%;
-    }
-
-    .product-item-article {
-        display: block;
-        width: 100%;
+.responsivecolumns {
+    .ecomproductslist__product-item-article, 
+    .ecomfeaturedproducts__product-item-article {
+        padding: 2%;
     }
 }
 
