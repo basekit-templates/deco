@@ -104,7 +104,7 @@
     }
 
     @media @mobile-650px {
-        padding: 25px 35px 15px;
+        padding: 25px 25px 15px;
     }
 
     // Flex position logo / company name
@@ -133,6 +133,7 @@
         }
     }
 
+    // Social Icons
     .social-icons {
         .social-link {
             background-color: transparent;
@@ -186,6 +187,38 @@
                     }
                 }
             }
+        }
+    }
+
+    // Twitter
+    .twitter__avatar {
+        display: none;
+    }
+
+    .twitter__tweet-wrap {
+        text-align: left;
+        @media @tablet {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    .twitter__tweet-content {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .signupform__legend {
+        text-align: left;
+        margin-bottom: 0;
+        @media @tablet {
+            text-align: center;
+        }
+    }
+
+    .signupform__label {
+        @media @mobile {
+            text-align: center;
         }
     }
 }
@@ -322,20 +355,31 @@ body {
 
 // Page Titles
 .template-title {
-    margin: 80px auto 80px;
+    margin: 80px auto 60px;
     max-width: 1000px;
     padding: 0 30px;
     width: 100%;
     text-align: center;
+
     h2 {
         font-size: 40px;
-        letter-spacing: 5px;
+        line-height: 55px;
+        letter-spacing: 15px;
         font-weight: 700;
         text-transform: uppercase;
         border-bottom: 1px solid #eeeeee;
         display: inline-block;
         padding-bottom: 40px!important;
     }
+
+    @media @tablet {
+        margin: 60px auto 50px;
+    }
+
+    @media @mobile {
+        margin: 30px auto 30px;
+    }
+
 }
 
 
