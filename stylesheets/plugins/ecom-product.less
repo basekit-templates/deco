@@ -1,0 +1,85 @@
+.ecomproduct {
+
+    &__product-article {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        .flex-direction(@direction: row);
+        .flex-wrap(@wrap: nowrap);
+        .justify-content(@justify: center);
+        .align-content(@align: center);
+        .align-items(@align:center);
+    
+        margin: 0 auto 80px;
+        max-width: 1200px;
+        padding: 0 30px;
+
+        @media @tablet {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__product-content {
+        .flex-order(@order: 1);
+        .flex (1 1 auto);
+        .align-self(@align: center);
+    
+        border: 5px solid @color-swatch3;
+        padding: 40px;
+        text-align: center;
+        margin-right: 30px;
+        @media @tablet {
+            display: block;
+            width: 100%;
+        }
+    }   
+
+    &__product-images {
+        .flex-order(@order: 2);
+        .flex (1 1 auto);
+        .align-self(@align: center);
+
+        @media @tablet {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        max-width: 80%;
+    }
+
+    &__select {
+        padding: 0px 30px 0 10px;
+        width: inherit;
+        background-color: inherit;
+        &:hover, 
+        &:focus {
+            background-color: transparent;
+        }
+    }
+
+    &__label {
+        padding-right: 10px;
+    }
+
+    &__select-wrap:after {
+        position: relative;
+        right: 30px;
+    }
+
+    &__form-group {
+        margin-bottom: 20px;
+    }
+
+    &__fieldset {
+        margin-bottom: 10px;
+    }
+
+}
+ 
+.ecom-product-go-to-checkout-btn {
+    background-color: @color-swatch2;
+}
