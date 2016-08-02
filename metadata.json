@@ -1,5 +1,5 @@
 {
-    "name":"Bergen",
+    "name":"Deco",
     "widgetVersion": 2,
     "thumbnail":"bergen.png",
     "templateType":"standard",
@@ -161,7 +161,7 @@
             "color__header--background" : "#fff"
         },
         "footer": {
-            "color__footer--background" : "#1e1e1e"
+            "color__footer--background" : "#ffffff"
         },
         "navigation": {
             "font__navigation--font-family": "@font-swatch6-font-family",
