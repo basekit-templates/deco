@@ -226,6 +226,25 @@
     .signupform__form {
         padding: 0;
     }
+
+    .companyaddress__address-line {
+        display: inline-block;
+        float: left;
+        margin-right: 10px;
+        p {
+            padding-bottom: 0;
+        }
+        @media @mobile-650px {
+            float: initial;
+            margin-right: 0;
+        }
+    }
+
+    .companyaddress__address {
+        @media @mobile-650px {
+            text-align: center;
+        }
+    }
 }
 
 .template-header--brand {
@@ -360,7 +379,7 @@ body {
 
 // Page Titles
 .template-title {
-    margin: 80px auto 60px;
+    margin: 60px auto 40px;
     max-width: 1000px;
     padding: 0 30px;
     width: 100%;
@@ -377,12 +396,9 @@ body {
         padding-bottom: 40px!important;
     }
 
-    @media @tablet {
-        margin: 60px auto 50px;
-    }
-
-    @media @mobile {
+    @media @mobile-650px {
         margin: 30px auto 30px;
+        padding-bottom: 20px!important;
     }
 
 }
