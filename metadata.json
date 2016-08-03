@@ -115,7 +115,7 @@
             "color__secondary": "#f5f6f7"
         },
         "site": {
-            "color__body--background": "black",
+            "color__body--background": "#000000",
             "color__container--background": "#fff",
             "color__link--text": "#1e1e1e",
             "font__companyname--font-family": "@font-swatch10-font-family",
@@ -170,7 +170,7 @@
             "font__navigation--line-height": "26px",
             "font__navigation--letter-spacing": "2px",
             "color__navigation--text": "#646464",
-            "color__navigation--text--selected": "white"
+            "color__navigation--text--selected": "#ffffff"
         },
         "form": {
             "color__form-legend--text" : "#1e1e1e",

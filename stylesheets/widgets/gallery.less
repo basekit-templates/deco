@@ -12,6 +12,11 @@
 @gallery-1col: ~"only screen and (min-width : 1px) and (max-width : 650px)";
 
 
+.widget__gallery {
+    max-width: 60%;
+    margin: 0px auto;
+}
+
 
 // Gallery Item
 // ------------------------------
@@ -27,20 +32,13 @@
 
     // 2 Columns Layout
     @media @gallery-2col {
-        width: 50%;
-        padding-bottom: 25%;
+        width: 100%;
+        padding-bottom: 40%;
         margin: 0;
 
 
+
         &:nth-child(2n) {
-            margin-right: 0;
-        }
-
-
-        &:nth-child(6n+3),
-        &:nth-child(6n+4),
-        &:nth-child(12n+3),
-        &:nth-child(12n+4) {
             .gallery__caption:after {
                 left: 100%;
             }

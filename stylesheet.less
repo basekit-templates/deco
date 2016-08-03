@@ -206,11 +206,13 @@
     .twitter__tweet-content {
         font-size: 16px;
         line-height: 30px;
+        padding: 0;
     }
 
     .signupform__legend {
         text-align: left;
         margin-bottom: 0;
+        font-size: 18px;
         @media @tablet {
             text-align: center;
         }
@@ -220,6 +222,9 @@
         @media @mobile {
             text-align: center;
         }
+    }
+    .signupform__form {
+        padding: 0;
     }
 }
 
@@ -483,6 +488,12 @@ body {
             @media @mobile-650px {
                 margin-bottom: 80px;
             }
+        }
+        &.widget.widget[data-name="gallery"] {
+            padding: 40px 0;
+            background-color: @color__form--background;
+            border-top: 1px solid darken(@color__twitter--background, 4%);
+            border-bottom: 1px solid darken(@color__twitter--background, 4%);
         }
     }
 }
