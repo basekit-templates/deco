@@ -113,25 +113,7 @@
 
     // Post title text styling if image is available
     .post-title {
-        color: white;
-        font-family: @font__h1--font-family;
-        font-size: bkscale(@font__h1--font-size, 1.1);
-        font-weight: @font__h1--font-weight;
-        letter-spacing: @font__h1--letter-spacing;
-        line-height: bkscale(@font__h1--line-height, 1.1);
-        margin-bottom: 0;
-        max-width: 650px;
-        padding-bottom: 0;
-        -webkit-font-smoothing: antialiased;
-
-        @media @desktop-1024px {
-            font-size: bkscale(@font__h1--font-size, 0.9);
-            line-height: bkscale(@font__h1--line-height, 0.9);
-        }
-
-        @media @tablet-860px {
-            color: white;
-        }
+        display: none;
     }
 
     // Blog content area
@@ -205,6 +187,7 @@
     max-width: 860px;
     padding: 0 30px;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 

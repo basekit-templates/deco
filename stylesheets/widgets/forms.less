@@ -102,6 +102,7 @@ textarea,
     font-size: bkscale(@font__p--font-size, 0.95);
     padding: 10px;
     -webkit-appearance: none;
+    border-radius: 0;
 
 
     &:focus {
@@ -119,6 +120,8 @@ input[type="password"],
 .product-filters .input--search,
 .input--single-line {
     height: 54px;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 
@@ -135,6 +138,9 @@ select {
     height: 54px;
     padding: 0 12px;
     width: 100%;
+    &:hover {
+        background-color: transparent!important;
+    }
 }
 
 
