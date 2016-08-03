@@ -32,7 +32,7 @@
 
     // 2 Columns Layout
     @media @gallery-2col {
-        width: 100%;
+        width: 50%;
         padding-bottom: 40%;
         margin: 0;
 
@@ -53,7 +53,7 @@
 
     // 1 Column Layout
     @media @gallery-1col {
-        width: 100%;
+        width: 50%;
         height: auto;
         padding-bottom: 50%;
         margin: 0;
@@ -106,10 +106,11 @@
 
 
 .gallery__caption {
-    outline: 1px solid @color__gallery-caption--background;
     margin: 0;
-    width: 50%;
-    position: relative;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
     @media @mobile-650px {
         width: 100%;
@@ -148,18 +149,22 @@
 
 // Captions fade
 .gallery__caption-link {
-    position: absolute;
+    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: @color__gallery-caption--background;
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+
     .flex-display;
     .flex-direction(column);
     .flex-wrap(nowrap);
-    .justify-content(center);
-    .align-content(stretch);
-    .align-items(center);
+    .justify-content(flex-start);
+    .align-content(flex-start);
+    .align-items(flex-start);
     .flex(1 1 50%);
     .transition(all 0.1s ease-in-out);
 
@@ -179,9 +184,7 @@
     font-size: 15px;
     letter-spacing: 1px;
     line-height: 24px;
-    padding: 2px 14px;
     text-transform: uppercase;
-    text-align: center;
 }
 
 // Image Description
@@ -190,9 +193,7 @@
     font-size: @font__p--font-size;
     line-height: bkscale(@font__p--line-height, 0.85);
     font-size: bkscale(@font__p--font-size, 0.95);
-    padding: 5px 14px;
     max-width: 100%;
-    text-align: center;
     text-overflow: ellipsis;
 
     @media @tablet-860px {
@@ -209,3 +210,5 @@
         white-space: normal;
     }
 }
+
+IF gallery__gallery-item has no gallery__caption then apply .gallery__image-link 100%

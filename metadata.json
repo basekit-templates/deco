@@ -33,9 +33,9 @@
         },
         "font2": {
             "font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
-            "font-size": "24px",
+            "font-size": "30px",
             "font-weight": "400",
-            "line-height": "36px",
+            "line-height": "46px",
             "color": "@color-swatch4",
             "letter-spacing": "inherit"
         },
@@ -145,9 +145,9 @@
             "font__h3--letter-spacing" : "0px",
             "color__h3--text": "#1e1e1e",
             "font__h4--font-family" : "@font-swatch4-font-family",
-            "font__h4--font-size" : "20px",
+            "font__h4--font-size" : "18px",
             "font__h4--font-weight" : "400",
-            "font__h4--line-height" : "38px",
+            "font__h4--line-height" : "28px",
             "font__h4--letter-spacing" : "0px",
             "color__h4--text": "#1e1e1e",
             "font__p--font-family" : "@font-swatch5-font-family",
