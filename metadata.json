@@ -1,7 +1,7 @@
 {
     "name":"Deco",
     "widgetVersion": 2,
-    "thumbnail":"bergen.png",
+    "thumbnail":"deco.png",
     "templateType":"standard",
     "pageTypes": ["home"],
     "screenshot":"deco-screenshot.jpg",
