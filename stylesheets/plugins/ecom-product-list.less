@@ -546,9 +546,18 @@ form.ecomproductslist__form {
 }
 
 .responsivecolumns {
+
     .ecomproductslist__product-item-article, 
     .ecomfeaturedproducts__product-item-article {
         padding: 2%;
+        @media @mobile-650px {
+            padding: 2% 4%;
+        }
+    }
+
+    .blogpostlist__timestamp {
+        @media @mobile-650px {
+            text-align: center;
+        }
     }
 }
-
