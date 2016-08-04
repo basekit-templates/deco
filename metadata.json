@@ -6,8 +6,9 @@
     "pageTypes": ["home"],
     "screenshot":"deco-screenshot.jpg",
      "images":[
-         "images/image1.jpg",
-         "images/feature.jpg"
+        "images/image1.jpg",
+        "images/logo.jpg",
+        "images/feature.jpg"
     ],
     "colorSwatches":
     {
