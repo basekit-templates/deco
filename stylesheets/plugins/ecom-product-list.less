@@ -189,8 +189,12 @@
     position: absolute;
     height: 20px;
     right: 50px;
-    top: 80px;
+    top: 100px;
     .transform(rotate(90deg));
+
+    @media @mobile-650px {
+        top: 85px;
+    }
 
     &:hover .toggle-item {
          background: @color__button--background;
@@ -409,6 +413,11 @@ form.ecomproductslist__form {
     max-width: 1040px;
     margin: 0px auto;
     padding: 20px 20px;
+
+    @media @tablet-860px {
+        width: 100%;
+        display: block;
+    }
 
 	@media @mobile-650px {
 		display: block;
