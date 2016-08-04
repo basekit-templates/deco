@@ -408,9 +408,10 @@ body {
         display: inline-block;
         padding-bottom: 40px!important;
         @media @mobile-650px {
-            font-size: bkscale(@font__h1--font-size, 0.6);
-            line-height: bkscale(@font__h1--line-height, 0.7);
+            font-size: bkscale(@font__h1--font-size, 0.7);
+            line-height: bkscale(@font__h1--line-height, 0.8);
             letter-spacing: 5px;
+            padding-bottom: 20px!important;
         }
     }
 
@@ -529,6 +530,13 @@ body {
                 padding: 0;
             }
         }
+    }
+}
+
+.ecom-list-page .bk-zone .widget {
+    margin: 0;
+    @media @mobile-650px {
+        margin-bottom: 0px;
     }
 }
 
