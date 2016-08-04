@@ -3,7 +3,7 @@
 
 
 <!-- Navigation Container -->
-<div class="nav-effect--container  default-page">
+<div class="nav-effect--container  ecom-list-page">
 
 
     <!-- Feature Containers -->
@@ -15,7 +15,7 @@
             {% include "includes/header.twig" %}
 
 
-            <div role="main">
+            <div class="filter-container">
 
                 <div class="template-title">
                     <h2 style="padding-bottom: 0;">
@@ -23,8 +23,20 @@
                     </h2>
                 </div>
 
+
                 <!-- Main Zone -->
                 {{zone('main')|raw}}
+
+
+                <div class="toggle-filter">
+                   <div class="toggle-items">
+                        <div class="toggle-item"></div>
+                        <div class="toggle-item"></div>
+                        <div class="toggle-item"></div>
+                   </div>
+                   <div class="toggle-active"></div>
+                </div>
+
 
             </div>
 
@@ -42,4 +54,34 @@
 
 </div>
 
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        $(document).on("click", ".toggle-filter", function() {
+            $( "body" ).toggleClass( "filters-open" );
+        });
+
+
+        $(function() {
+
+        $(".toggle-filter").click(function() {
+
+            $(this).prepend('<span class="animate"></span>')
+                $(".animate").animate({
+                    width: 80,
+                    height: 80,
+                    opacity: 0
+                 },
+                 500,
+                 function() {
+                    $(this).remove();
+                 });
+
+                $(this).toggleClass('active');
+           })
+        })
+    </script>
 {% endblock %}
