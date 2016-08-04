@@ -216,6 +216,7 @@
     }
 }
 
+// Styles for responsive columns
 .responsivecolumns {
 
     .gallery__gallery-item {
@@ -224,6 +225,26 @@
         @media @mobile-650px {
             padding-bottom: 0;
         }
+    }
+
+    [role="main"] .widget.widget.widget[data-name="gallery"] {
+        background-color: transparent;
+        border: 0;
+    }
+
+}
+
+// 3/4 Columns
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+    .gallery__caption {
+        display: none;
     }
 
 }
