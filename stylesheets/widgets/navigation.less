@@ -27,6 +27,9 @@
     // Removes scroll to stop navigation icon from being hidden
     @media @tablet-860px {
         overflow: hidden;
+        z-index: 10002;
+        width: 75%;
+        left: initial;
     }
 }
 
@@ -47,7 +50,7 @@
 
     @media @tablet-860px {
         padding-top: 50px;
-        width: 50%;
+        width: 100%;
     }
 
 
@@ -398,7 +401,7 @@
         backface-visibility: hidden;
 
         @media @tablet-860px {
-            width: 50%;
+            width: 100%;
         }
 
         &:after,
@@ -427,7 +430,6 @@
     left: -75%;
 }
 
-
 // Navigation transforms
 .nav-effect {
 
@@ -445,6 +447,10 @@
     &.animate [data-widget-type="extendednavigation"] .item-name {
         opacity: 1;
         .transform(translateX(0) translateZ(0));
+    }
+
+    &.animate [data-widget-type="extendednavigation"] {
+        background-color: black;
     }
 }
 

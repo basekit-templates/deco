@@ -162,6 +162,7 @@
     display: inline-block!important;
     padding: 20px;
     text-align: left;
+    margin: 0;
 
     .flex-display;
     .flex-direction(column);
@@ -174,14 +175,12 @@
 
     @media @tablet-860px {
         width: initial;
-        margin: 20px;
     }
 
     @media @mobile-650px {
         display: block;
         position: relative;
         padding: 10px;
-        margin: 10px;
         background-color: fade(@color__gallery-caption--background, 85%);
     }
 }
@@ -234,6 +233,7 @@
     }
 
     .gallery__caption-link {
+        background-color: fade(@color__gallery-caption--background, 85%);
         @media @tablet-860px {
             display: none;
         }
