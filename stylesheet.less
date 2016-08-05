@@ -286,7 +286,7 @@
         .align-self(@align: center);
 
         position: absolute;
-        left: 25px;
+        left: 15px;
         top: 20px;
     }
 }
@@ -294,9 +294,14 @@
 .logo-companyname  {
     text-align: center;
     @media @tablet-860px {
+        max-width: 90%;
+
         .flex-order(@order: 1);
         .flex(@display: 1 1 auto);
         .align-self(@align: center);
+    }
+    @media @mobile-650px {
+        max-width: 70%;
     }
 }
 
