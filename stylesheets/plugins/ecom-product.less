@@ -11,13 +11,17 @@
         .align-content(@align: center);
         .align-items(@align: center);
     
-        margin: 80px auto 80px;
+        margin: 60px auto 20px;
         max-width: 1200px;
         padding: 0 30px;
 
-        @media @tablet {
+        @media @tablet-860px {
             display: block;
             width: 100%;
+        }
+
+        @media @mobile-650px {
+            margin: 40px auto 0px;
         }
     }
 
