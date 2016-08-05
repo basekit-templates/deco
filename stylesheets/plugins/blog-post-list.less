@@ -1,5 +1,11 @@
 .blogpostlist {
 
+    &__post-header {
+        @media @tablet-860px {
+            margin-top: 50px;
+        }
+    }
+
     &__post-items {
         .flex-display;
         .flex-wrap(wrap);
@@ -30,7 +36,7 @@
             width: 100%;
             display: block;
             max-width: 100%;
-            padding: 4% 3%;
+            padding: 3%;
         }
     }
 
@@ -150,6 +156,12 @@
     &__post-list-footer {
         padding: 0 0 30px;
         margin-top: 50px;
+    }
+
+    &__post-footer {
+        @media @tablet-860px {
+            margin-bottom: 0;
+        }
     }
 
     &__pagination-list {
