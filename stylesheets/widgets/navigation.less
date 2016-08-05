@@ -28,8 +28,11 @@
     @media @tablet-860px {
         overflow: hidden;
         z-index: 10002;
-        width: 75%;
+        width: 85%;
         left: initial;
+    }
+    @media @mobile-650px {
+        width: 75%;
     }
 }
 
@@ -413,9 +416,9 @@
 
 
         // Fixes a rendering bug in Chrome on Windows
-        + div {
+        /*+ div {
             .transform(translateZ(-1px));
-        }
+        }*/
     }
 
 
@@ -450,7 +453,7 @@
     }
 
     &.animate [data-widget-type="extendednavigation"] {
-        background-color: black;
+        background-color: @color-swatch3;
     }
 }
 
