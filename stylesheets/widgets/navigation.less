@@ -27,7 +27,6 @@
     // Removes scroll to stop navigation icon from being hidden
     @media @tablet-860px {
         overflow: hidden;
-        z-index: 10002;
         width: 85%;
         left: initial;
     }
@@ -40,6 +39,7 @@
 .animate [data-widget-type="extendednavigation"] {
     @media @tablet-860px {
         overflow-y: scroll!important;
+        z-index: 10002;
     }
 }
 
