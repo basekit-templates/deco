@@ -197,14 +197,14 @@
             "color__socialicons--icon" : "#fff"
         },
         "image": {
-            "color__image-caption--background": "rgba(0,0,0, 0.45)",
-            "color__image-title--text": "#fff",
-            "color__image-description--text": "#bebebe"
+            "color__image-caption--background": "#fff",
+            "color__image-title--text": "@color__h2--text",
+            "color__image-description--text": "@color__h2--text"
         },
         "gallery": {
             "color__gallery-caption--background" : "#fff",
             "color__gallery-title--text" : "@color__h2--text",
-            "color__gallery-description--text" : "@color__p--text"
+            "color__gallery-description--text" : "@color__h2--text"
         },
         "slideshow": {
             "color__slideshow--background": "transparent",
