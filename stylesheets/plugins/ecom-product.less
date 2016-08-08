@@ -53,9 +53,13 @@
         .flex (1 1 50%);
         .align-self(@align: center);
 
-        @media @tablet {
+        @media @tablet-860px {
             display: block;
             width: 100%;
+            margin-bottom: 30px;
+        }
+        @media @mobile-650px {
+            margin-bottom: 20px;
         }
     }
 
