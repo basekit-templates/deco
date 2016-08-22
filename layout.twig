@@ -1,61 +1,49 @@
 <!doctype html>
-
-<!--[if lt IE 7]>
-    <html class="no-js ie6 oldie" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-    <html class="no-js ie7 oldie" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-    <html class="no-js ie8 oldie" lang="en">
-<![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js  full-nav" lang="{{ page.seoLang }}">
-<!--<![endif]-->
 
-<head>
-    <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
-    <meta name="keywords" content="{{ page.keywords }}" />
-    <meta name="description" content="{{ page.description }}" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ page.title }}</title>
+        <meta name="keywords" content="{{ page.keywords }}" />
+        <meta name="description" content="{{ page.description }}" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    {% if site.favicon %}
-        <link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
-        <link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
-    {% endif %}
+        {% if site.favicon %}
+            <link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+            <link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+        {% endif %}
 
-    {% include basekit.headScript %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-</head>
+        {% include basekit.headScript %}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    </head>
 
-<body class="{{ page.backgroundClass }}">
+    <body class="{{ page.backgroundClass }}">
 
-    <div id="navigation" class="site-container  nav-effect">
+        <div id="navigation" class="site-container  nav-effect">
 
-        {% block content %}
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+        {% include basekit.bodyScript %}
+
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <!-- Custom Navigation Scripts -->
+        <script src="{{ asset('scripts/classie.js')}}"></script>
+        <script src="{{ asset('scripts/navigation.js')}}"></script>
+
+        <!-- Twitter Widget JS -->
+        <script src="{{ asset('scripts/twitter-slider.js')}}"></script>
+
+        <!-- Scripts -->
+        <script src="{{ asset('scripts/custom.js')}}"></script>
+
+        <!-- Page Specific Scripts -->
+        {% block scripts %}
         {% endblock %}
 
-    </div>
-
-    {% include basekit.bodyScript %}
-
-    <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
-    <!-- Custom Navigation Scripts -->
-    <script src="{{ asset('scripts/classie.js')}}"></script>
-    <script src="{{ asset('scripts/navigation.js')}}"></script>
-
-    <!-- Twitter Widget JS -->
-    <script src="{{ asset('scripts/twitter-slider.js')}}"></script>
-
-    <!-- Scripts -->
-    <script src="{{ asset('scripts/custom.js')}}"></script>
-
-    <!-- Page Specific Scripts -->
-    {% block scripts %}
-    {% endblock %}
-
-</body>
+    </body>
 </html>
