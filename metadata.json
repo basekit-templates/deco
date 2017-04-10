@@ -6,7 +6,7 @@
     "pageTypes": ["home", "ecomproductlist"],
     "screenshot":"deco-screenshot.jpg",
      "images":[
-        "images/image1.jpg",
+        "images/image-1.jpg",
         "images/logo.jpg",
         "images/feature.jpg"
     ],
