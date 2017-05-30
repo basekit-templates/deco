@@ -1,3 +1,9 @@
+// Toggles class open to display/hide navigation folder
+ $(document).on("click", ".navigation-item.folder", function() {
+     $(this).toggleClass( "folder-open" );
+ });
+
+
 // Makes the whole ecom product tiles clickable
 $(document).ready(function() {
 
