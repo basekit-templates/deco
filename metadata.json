@@ -116,7 +116,7 @@
             "color__secondary": "#f5f6f7"
         },
         "site": {
-            "color__body--background": "#000000",
+            "color__body--background": "#fff",
             "color__container--background": "#fff",
             "color__link--text": "#1e1e1e",
             "font__companyname--font-family": "@font-swatch10-font-family",
