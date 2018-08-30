@@ -48,3 +48,9 @@ var publishedmode = true;
 if($("body.edit").length > 0) {
     publishedmode = false;
 }
+
+$(document).ready(function() {
+    if($(".itemcount-0").length > 0) {
+         $(".nav-icon").addClass("hide-icon");
+    }
+});
