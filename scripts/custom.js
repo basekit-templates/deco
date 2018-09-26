@@ -49,8 +49,15 @@ if($("body.edit").length > 0) {
     publishedmode = false;
 }
 
+
 $(document).ready(function() {
-    if($(".itemcount-0").length > 0) {
-         $(".nav-icon").addClass("hide-icon");
+    if($("#page-zones__template-widgets__extendednavigation-navigation").hasClass("bk-tpl-hidden")) {
+        $(".nav-icon").addClass("hide-icon");
+    }
+    else if($(".extendednavigation").length > 0) {
+        $(".nav-icon").removeClass("hide-icon");
+    }
+    else {
+        $(".nav-icon").addClass("hide-icon");
     }
 });
