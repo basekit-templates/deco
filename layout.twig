@@ -38,6 +38,18 @@
         <!-- Scripts -->
         <script src="{{ asset('scripts/custom.js')}}"></script>
 
+        <script>
+            $(document).ready(function() {
+                if ($("#page-zones__template-widgets__extendednavigation-navigation").hasClass("bk-tpl-hidden")) {
+                    $(".nav-icon").addClass("hide-icon");
+                } else if ($(".extendednavigation").length < 1) {
+                    $(".nav-icon").addClass("hide-icon");
+                } else {
+                    $(".nav-icon").removeClass("hide-icon");
+                }
+            });
+        </script>
+
         <!-- Page Specific Scripts -->
         {% block scripts %}
         {% endblock %}
