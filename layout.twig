@@ -17,7 +17,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     </head>
 
-    <body class="{{ page.backgroundClass }}">
+    <body {{ isV10sSite ? 'id="migrated-site"' : '' }} class="{{ page.backgroundClass }}">
 
         <div id="navigation" class="site-container  nav-effect">
 

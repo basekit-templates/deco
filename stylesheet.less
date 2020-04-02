@@ -405,17 +405,28 @@ body {
 
 
 // Main zone wrapper
-[role="main"],
-.blog-page .bk-zone,
-.blog-list-page .bk-zone,
-.ecom-page .bk-zone,
-.ecom-list-page .bk-zone {
+[role="main"] #page-zones__main,
+.blog-page #page-zones__main,
+.blog-list-page #page-zones__main,
+.ecom-page #page-zones__main,
+.ecom-list-page #page-zones__main {
     background-color: @color__container--background;
     overflow: hidden;
 
 
+    .row-editing & {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+
+    .is-move-mode & {
+        margin: 0;
+    }
+
+
     // Default widget spacing
-    .widget {
+    > .widget {
         margin: 0 auto 40px;
         max-width: 1000px;
         padding: 0 30px;
@@ -439,7 +450,34 @@ body {
         }
 
 
+        &[data-name="responsivecolumns"] .column .widget {
+            margin-top: 0;
+
+            & + .widget {
+                margin-top: 8px;
+            }
+        }
+
+
+        &[data-name="row"] {
+            margin: 0;
+
+            + .widget {
+                margin-top: 50px;
+            }
+
+            + .widget[data-name="responsiveslideshow"],
+            + .widget[data-name="youtube"],
+            + .widget[data-name="map"],
+            + .widget[data-name="gallery"],
+            + .widget[data-name="image"] {
+                margin-top: 0;
+            }
+        }
+
+
         // Full width widgets
+        &.widget[data-name="row"],
         &.widget[data-name="responsiveslideshow"],
         &.widget[data-widget-type="responsiveslideshow"],
         &.widget[data-name="youtube"],
@@ -558,7 +596,7 @@ body {
 // --------------------
 
 
-[role="main"] [data-name="responsivecolumns"] {
+[role="main"] #page-zones__main > [data-name="responsivecolumns"] {
     max-width: 100%;
     padding: 0;
 
@@ -571,6 +609,7 @@ body {
 
 
     .contactform,
+    .advancedcontactform,
     .signupform,
     .blogsearch {
 
@@ -631,7 +670,7 @@ body {
     }
 }
 
-[data-name="responsivecolumns"] .widget {
+[role="main"] #page-zones__main > [data-name="responsivecolumns"] .widget {
     padding: 0 30px!important;
 
     @media @tablet-860px {
