@@ -568,7 +568,7 @@ body {
 
 
 // Removes large spacing between some widgets when placed in a certain order
-[data-name="content"] {
+#page-zones__main > [data-name="content"] {
     &+ [data-name="button"],
     &+ [data-name="clicktocall"],
     &+ [data-name="content"],
@@ -576,7 +576,7 @@ body {
     &+ [data-name="paypalbuynow"],
     &+ [data-name="socialicons"],
     &+ [data-name="ecomlegal"] {
-        margin-top: -60px;
+        margin-top: -40px;
 
         @media @mobile-650px {
             margin-top: -30px;
