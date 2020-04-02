@@ -1,0 +1,61 @@
+
+// -----------------------------
+// Migration Styles
+// -----------------------------
+
+
+#migrated-site {
+
+
+    // Stylesheet overrides
+    // -----------------------------
+
+
+    // Hide header in section move mode
+    .is-move-mode .template-header {
+        display: none;
+    }
+
+
+    .container {
+        margin: 0;
+        max-width: 100%;
+    }
+
+
+    .container .widget[data-name="row"],
+    .container .widget[data-name="row"] .widget {
+        margin: 0;
+        width: auto;
+
+        @media @tablet {
+            padding: 0;
+        }
+
+        .widget {
+            display: block;
+            padding: 0;
+        }
+    }
+
+
+    .container .widget[data-name="row"] {
+        display: block;
+    }
+
+
+    [data-name="row"] .product-item-article .product-item-price {
+        padding-left: 30px;
+    }
+
+
+    [data-name="row"] .blogpostlist__post-article {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    .template-footer {
+        margin-top: 0;
+    }
+}
