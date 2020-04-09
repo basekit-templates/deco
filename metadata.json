@@ -5,6 +5,7 @@
     "templateType":"standard",
     "pageTypes": ["home", "ecomproductlist"],
     "screenshot":"deco-screenshot.jpg",
+    "versionTenCompatible": 1,
      "images":[
         "images/image-1.jpg",
         "images/logo.jpg",
